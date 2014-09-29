@@ -1,8 +1,8 @@
 package com.flavienlaurent.notboringactionbar;
 
-import mn.ismartdev.donatevoyage.R;
 import java.util.Random;
 
+import mn.ismartdev.donatevoyage.R;
 import android.content.Context;
 import android.os.Handler;
 import android.util.AttributeSet;

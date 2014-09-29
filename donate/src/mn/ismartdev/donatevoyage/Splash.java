@@ -1,5 +1,6 @@
 package mn.ismartdev.donatevoyage;
 
+import mn.ismartdev.donatevoyage.walk.WalkThrough;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,7 +25,7 @@ public class Splash extends Activity {
 			public void run() {
 				// TODO Auto-generated method stub
 				finish();
-				startActivity(new Intent(Splash.this, MainActivity.class));
+				startActivity(new Intent(Splash.this, WalkThrough.class));
 			}
 		}, 2500);
 	}

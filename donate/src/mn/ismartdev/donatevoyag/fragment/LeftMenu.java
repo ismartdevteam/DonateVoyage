@@ -1,7 +1,7 @@
 package mn.ismartdev.donatevoyag.fragment;
 
 import mn.ismartdev.donatevoyage.R;
-import mn.ismartdev.donatevoyage.RestaurantMain;
+import mn.ismartdev.donatevoyage.GuideMain;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -20,8 +20,8 @@ import android.widget.TextView;
 public class LeftMenu extends Fragment {
 	View v;
 	private ListView menuList;
-	private String menus[] = { "Нүүр хуудас", "Ресторан" };
-	private int images[] = { R.drawable.home, R.drawable.restaurant };
+	private String menus[] = { "Guide", "Itinerary", "Stories", "Travel Tips",
+			"Currency Converter", "Dictionary" };
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
@@ -35,9 +35,9 @@ public class LeftMenu extends Fragment {
 					int position, long id) {
 				// TODO Auto-generated method stub
 				switch (position) {
-				case 1:
+				case 0:
 					startActivity(new Intent(getActivity(),
-							RestaurantMain.class));
+							GuideMain.class));
 					break;
 
 				default:
@@ -55,6 +55,10 @@ public class LeftMenu extends Fragment {
 		menuList = (ListView) v.findViewById(R.id.menu_list);
 		return v;
 	}
+
+	private int images[] = { R.drawable.home, R.drawable.restaurant,
+			R.drawable.home, R.drawable.restaurant, R.drawable.home,
+			R.drawable.restaurant };
 
 	private class MyMenuAdapter extends ArrayAdapter<String> {
 		Context mContext;

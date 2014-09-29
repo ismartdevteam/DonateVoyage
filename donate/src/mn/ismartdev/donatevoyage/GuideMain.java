@@ -26,8 +26,8 @@ import com.kmshack.newsstand.ScrollTabHolder;
 import com.kmshack.newsstand.ScrollTabHolderFragment;
 import com.nineoldandroids.view.ViewHelper;
 
-public class RestaurantMain extends ActionBarActivity implements
-		ScrollTabHolder, ViewPager.OnPageChangeListener {
+public class GuideMain extends ActionBarActivity implements ScrollTabHolder,
+		ViewPager.OnPageChangeListener {
 
 	private KenBurnsSupportView mHeaderPicture;
 	private View mHeader;
@@ -55,9 +55,10 @@ public class RestaurantMain extends ActionBarActivity implements
 				R.dimen.header_height);
 		mMinHeaderTranslation = -mMinHeaderHeight + getActionBarHeight();
 
-		setContentView(R.layout.restaurant_main);
+		setContentView(R.layout.guide_main);
 		mHeaderPicture = (KenBurnsSupportView) findViewById(R.id.header_picture);
-		mHeaderPicture.setResourceIds(R.drawable.home, R.drawable.restaurant);
+		mHeaderPicture.setResourceIds(R.drawable.guide_one,
+				R.drawable.guide_two, R.drawable.guide_three);
 		mHeader = findViewById(R.id.header);
 
 		mPagerSlidingTabStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
@@ -180,8 +181,8 @@ public class RestaurantMain extends ActionBarActivity implements
 	public class PagerAdapter extends FragmentPagerAdapter {
 
 		private SparseArrayCompat<ScrollTabHolder> mScrollTabHolders;
-		private final String[] TITLES = { "Page 1", "Page 2", "Page 3",
-				"Page 4" };
+		private final String[] TITLES = { "Attractions", "Shopping",
+				"Restaurants", "Night Life", "Hotel Motel", "Others" };
 		private ScrollTabHolder mListener;
 
 		public PagerAdapter(FragmentManager fm) {
@@ -225,7 +226,7 @@ public class RestaurantMain extends ActionBarActivity implements
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
-		getMenuInflater().inflate(R.menu.restaurant_menu, menu);
+		getMenuInflater().inflate(R.menu.guide_menu, menu);
 
 		return super.onCreateOptionsMenu(menu);
 	}
